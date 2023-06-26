@@ -2,11 +2,13 @@
 
 ExpressionHelper allows developers a tool to manipulate math equations and expressions.
 
+This project is currently under development. The below examples and documentation may not be fully built yet.
+
 ### How to use it
 
 Convert your string expressions into a form that will work for you.
 
-```
+```cs
 // Left hand expression
 string s_lhs = "2x";
 AlgebraicExpression expr_lhs = new AlgebraicExpression(s_lhs);
@@ -21,13 +23,13 @@ IEnumerable<AlgebraicExpression> result = eq.Solve("x"); // Solve for 'x'
 string s_result = String.Concat("[", string.Join(", ", result.Select(x => x.ToString())), "]"); // Produces "[sqrt(1/3), -sqrt(1/3)]"
 ```
 
-```
+```cs
 AlgebraicExpression expr = new AlgebraicExpression("3x^2");
 Derivative dx = expr.Derivative("x");
 string result = dx.ToString(); // Produces "6x"
 ```
 
-```
+```cs
 Vector vec1 = new Vector(3)
 {
     new AlgebraicExpression("2x+1"),
