@@ -60,6 +60,13 @@ public class Symbol
             return val is int;
         }
     }
+    public bool IsFraction
+    {
+        get
+        {
+            return val is Fraction;
+        }
+    }    
 
     public static implicit operator Symbol(int value)
     {
