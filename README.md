@@ -23,8 +23,8 @@ string s_result = String.Concat("[", string.Join(", ", result.Select(x => x.ToSt
 
 ```
 AlgebraicExpression expr = new AlgebraicExpression("3x^2");
-AlgebraicExpression expr_dx = expr.Derivative();
-string result = expr_dx.ToString(); // Produces "6x"
+Derivative dx = expr.Derivative("x");
+string result = dx.ToString(); // Produces "6x"
 ```
 
 ```
@@ -39,3 +39,28 @@ AlgebraicExpression linearAlgebra_expr = new AlgebraicExpression(expr * vec1);
 ```
 
 Please be aware, the examples above may not be available yet as it may be a work in project. These examples represent the intended use-cases and will change if needed during development.
+
+## Documentation
+
+Below is a list of the available classes and their functions.
+
+1. `AlgebraicExpression`
+    - `Derivative()`
+    - `Integral()`
+2. `Derivative`
+    - `Derivative()`
+    - `Integral()`
+3. `Equation`
+    - `Solve()`
+4. `Integral`
+    - `Derivative()`
+    - `Integral()`
+5. `Matrix`
+    - `Determinant()`
+6. `Vector`
+    - `Dot()`
+    - `Cross()`
+    - `Proj()`
+
+`ToString()` will build a string that represents the algebraic expression.
+Operator overloads handle all addition, subtraction, multiplication and division operations.
