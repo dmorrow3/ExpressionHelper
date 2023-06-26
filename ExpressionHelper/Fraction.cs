@@ -9,7 +9,7 @@ public class Fraction
 
     public Fraction()
     {
-        
+
     }
     public Fraction(int numerator, int denominator = 1)
     {
@@ -17,9 +17,15 @@ public class Fraction
         this.denominator = denominator;
     }
 
+    public void Reduce()
+    { // Reduce numerator and denominator by eliminating common factors
+        throw new NotImplementedException();
+    }
+
     public override string ToString()
     { 
-        if (numerator == 0) return "1";
+        if (numerator == 0) return "0";
+        else if (denominator == 1) return numerator.ToString();
         else return String.Concat(numerator, "/", denominator);
     }
 }
